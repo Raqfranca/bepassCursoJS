@@ -24,10 +24,9 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 
-novaVariavel = 7;
-
 function monstrandoValor(){
-    return "O valor da variável agora é " + novaVariavel + '.' + ' Onde ' + novaVariavel +' é o novo valor da variável.'
+    novaVariavel = 7
+    return "O valor da variável agora é " + novaVariavel + "."
 } 
 
 // Invoque a função criada acima.
@@ -38,7 +37,6 @@ console.log(monstrandoValor());
 
 /*
 O valor da variável agora é 7. 
-Onde 7 é o novo valor da variável.
 */
 
 /*
@@ -50,16 +48,28 @@ Crie uma função com as seguintes características:
 */
 
 function tresArgumentos(x,y,z){
-    if(x == null || y == null || z == null){
+    if(x === undefined || y == undefined || z == undefined){
         return "Preencha todos os valores corretamente!"
     }else{
         return (x*y*z)+2
     }
 }
 
+// Posso criar o código sem o else pq quando a condição if é verdadeira, ele entra no que é solicitado nos {} e 
+// termina, não continua lendo o código. 
+
+function tresArgumentos2(x,y,z){
+    if(x === undefined || y == undefined || z == undefined){
+        return "Preencha todos os valores corretamente!"
+    }
+    return (x*y*z)+2
+}
+
 // Invoque a função criada acima, passando só dois números como argumento.
 
 console.log(tresArgumentos(7,5))
+
+console.log(tresArgumentos2(7,5))
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 
@@ -68,6 +78,8 @@ console.log(tresArgumentos(7,5))
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 
 console.log(tresArgumentos(7,5,9))
+
+console.log(tresArgumentos2(7,5,9))
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 
@@ -84,34 +96,19 @@ terceiro.
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 
-/* function muitosIf(x,y,z){
-    if(y == null || z == null){
-        return x
-    }else if( z == null){
-        return x + y
-    }else if ( x == null || y == null || z == null){
-        return false
-    }else if (x, y, z){
-        return (x+y)/z
-    }else{
-        return 'null'
-    }
-} */
-
 function muitosIf(x,y,z){
-    if(x || y == null || z == null){
+    if(x !== undefined && y === undefined && z === undefined){
         return x
-    }else if(x || y || z == null){
+    }else if( x !== undefined && y !== undefined && z == undefined){
         return x + y
-    }else if ( x == null || y == null || z == null){
-        return false
-    }else if (x, y, z){
+    }else if (x !== undefined && y !==undefined && z !==undefined){
         return (x+y)/z
+    } else if (x === undefined && y === undefined && z === undefined){
+        return false
     }else{
-        return 'null'
+        return null
     }
 } 
-
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) 
 //Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
@@ -119,6 +116,12 @@ function muitosIf(x,y,z){
 console.log(muitosIf(2))
 //2
 
-
 console.log(muitosIf(2,3))
-// Errado 
+//5 
+
+console.log(muitosIf());
+// false 
+
+console.log(muitosIf(1,2,3));
+//1
+
