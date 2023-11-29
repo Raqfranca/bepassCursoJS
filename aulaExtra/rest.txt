@@ -1,0 +1,26 @@
+https://www.youtube.com/watch?v=S7MduKwvVGk
+
+REST API (Representational State Transfer) é um tipo específico de API, mas existem outros tipos de APIs, 
+cada um com suas características e propósitos. Alguns dos tipos mais comuns incluem:
+
+* SOAP (Simple Object Access Protocol): Um protocolo de troca de mensagens baseado em XML, utilizado para 
+comunicação entre sistemas. É mais pesado em termos de largura de banda em comparação com REST, mas ainda 
+é amplamente usado em ambientes empresariais.
+
+* GraphQL (Graph Query Language): Uma linguagem de consulta para APIs que foi desenvolvida pelo Facebook. 
+GraphQL permite que os clientes solicitem apenas os dados de que precisam, o que pode reduzir a quantidade 
+de dados transferidos pela rede.
+
+* JSON-RPC e XML-RPC: São protocolos para a chamada remota de procedimentos, onde os dados são transmitidos 
+em formato JSON ou XML, respectivamente.
+
+* WebSocket: Embora não seja estritamente uma API, é uma tecnologia que permite a comunicação bidirecional 
+em tempo real entre clientes e servidores. É frequentemente usada em conjunto com APIs para fornecer 
+recursos em tempo real.
+
+* gRPC (gRPC Remote Procedure Calls): Um framework de código aberto desenvolvido pelo Google que utiliza o 
+Protocol Buffers para definir serviços e mensagens. É eficiente em termos de desempenho e é projetado para 
+ser usado em diversos ambientes e linguagens de programação.
+
+* OData (Open Data Protocol): Um protocolo padrão da OASIS que permite a criação e o consumo de APIs de 
+dados de maneira uniforme. Ele é projetado para ser simples de implementar e seguir padrões RESTful.

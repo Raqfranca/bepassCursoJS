@@ -32,6 +32,9 @@
     console.log(cleanCPF(CPF3));
     console.log(cleanCPF(CPF4));
     
+    //Outra forma de tratar os CPFs
+
+    
 
     /*
     Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
