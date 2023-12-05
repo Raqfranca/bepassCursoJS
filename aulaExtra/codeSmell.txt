@@ -1,0 +1,17 @@
+https://www.youtube.com/watch?v=SQqqiC0YpA0
+
+Code Smell (A arte de farejar código ruim) // Dicionário do Programador
+
+Recomendação do livro: 
+https://www.amazon.com.br/Refatora%C3%A7%C3%A3o-Aperfei%C3%A7oando-Design-C%C3%B3digos-Existentes/dp/8575227246
+
+https://www.estantevirtual.com.br/osebocultural/loiane-groner-estruturas-de-dados-e-algoritmos-com-javascript-4174673211?show_suggestion=0
+
+
+Nome misterioso   -  Nome precisa condizer com o conteudo 
+
+Code Smell  não é um bug
+
+Infladores - 
+
+Clen Code e SOLID - 
