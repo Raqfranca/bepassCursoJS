@@ -163,10 +163,6 @@
         }
     }, false);
 
-    // Minha resolução não passou em todos os email :(
-    // walter-da-silva@maraca.br 
-
-
 })(window, document)
 
 

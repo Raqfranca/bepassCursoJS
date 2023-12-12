@@ -1,0 +1,10 @@
+https://www.youtube.com/watch?v=bdRXBporLXY 
+  
+Service Workers (O Best Friend do Front-End) 
+
+https://medium.com/reactbrasil/como-o-javascript-funciona-service-workers-seu-ciclo-de-vida-e-casos-de-uso-8404870ee728
+
+https://web.dev/learn/pwa/service-workers?hl=pt-br
+
+https://blog.rocketseat.com.br/pwa-o-que-e-quando-utilizar/
+

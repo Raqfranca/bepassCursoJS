@@ -1,0 +1,4 @@
+Regex que confirma qualquer email: 
+
+https://pdw.ex-parrot.com/Mail-RFC822-Address.html
+

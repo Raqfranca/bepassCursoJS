@@ -1,0 +1,3 @@
+https://www.youtube.com/watch?v=nGXZmqovUmg
+
+Canary Deployment (Implantando Mudanças aos Poucos em Produção)
