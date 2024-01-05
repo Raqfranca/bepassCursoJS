@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue.js Formulário</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="app">
+  <div class="col-md-12 p-2">
+    <div class="mb-3">
+      <label class="form-label fw-bolder">Etapas dos projetos</label>
+
+      <div class="box d-flex justify-content-around">
+        <div v-for="(step, index) in steps" :key="index">
+          <button class="mt-3 mb-3 button-left" @click="changeStep(index)">
+            <svg xmlns="http://www.w3.org/2000/svg" height="20" width="18" viewBox="0 0 448 512">
+              <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+            </svg>
+          </button>
+          <h6 class="mb-3">{{ step.label }}</h6>
+          <input
+            v-model="step.date"
+            type="text"
+            class="form-control mb-3 box"
+            placeholder="00/00/0000"
+            :disabled="currentIndex !== index"
+            :class="{ 'laranja': currentIndex === index }"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      steps: [
+        { label: 'Previsão', date: '' },
+        { label: 'Em análise', date: '' },
+        { label: 'Desenvolvimento', date: '' },
+        { label: 'Entrega', date: '' },
+      ],
+      currentIndex: 1, // O índice do campo "Em análise"
+    },
+    methods: {
+      changeStep(index) {
+        this.currentIndex = index;
+      },
+    },
+  });
+</script>
+
+</body>
+</html>
