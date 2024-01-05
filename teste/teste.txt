@@ -75,3 +75,60 @@ export default {
 </style>
 
 
+
+///////////////////////////////////////////////////////////////////
+
+<script>
+import { useProjetoStore } from "@/caminho/para/useProjetoStore"; // Substitua pelo caminho real do seu useProjetoStore
+import { useAuth } from "@/caminho/para/useAuth"; // Substitua pelo caminho real do seu useAuth
+import FormProjetoArea from "@/caminho/para/FormProjetoArea"; // Substitua pelo caminho real do seu FormProjetoArea
+import FormProjetoSolicitante from "@/caminho/para/FormProjetoSolicitante"; // Substitua pelo caminho real do seu FormProjetoSolicitante
+import FormProjetoDemanda from "@/caminho/para/FormProjetoDemanda"; // Substitua pelo caminho real do seu FormProjetoDemanda
+import Spinner from "@/caminho/para/Spinner"; // Substitua pelo caminho real do seu Spinner
+
+export default {
+  name: "FormProjeto",
+  components: {
+    FormProjetoArea,
+    FormProjetoSolicitante,
+    FormProjetoDemanda,
+    Spinner,
+  },
+  data() {
+    return {
+      projetoStore: useProjetoStore(),
+      auth: useAuth(),
+      dt_Criacao: new Date().toLocaleDateString("pt-BR"),
+      user: useAuth().user.Name,
+      areaMontado: false,
+      // Propriedades de data() do Teste incorporadas aqui
+      steps: [
+        { label: 'Em análise', date: '', input: true },
+        { label: 'Desenvolvimento', date: '', input: true },
+        { label: 'Entrega', date: '', input: true },
+      ],
+      currentIndex: 1, // O índice do campo "Em análise"
+    };
+  },
+  methods: {
+    //Função que atua assim que o componente FormProjetoArea for montado mudando a variável para true assim computando o próximo componente
+    //Solicitante Marcello Fontes 2023-12-12
+    componenteAreaMounted() {
+      this.areaMontado = true;
+    },
+    // Lógica do componente Teste incorporada aqui
+    changeStep(stepChange) {
+      this.currentIndex += stepChange;
+      if (this.currentIndex < 0) {
+        this.currentIndex = 0;
+      } else if (this.currentIndex >= this.steps.length) {
+        this.currentIndex = this.steps.length - 1;
+      }
+    },
+    // ... Outros métodos do componente Teste
+  },
+};
+</script>
+
+
+
