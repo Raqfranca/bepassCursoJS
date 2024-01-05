@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vue.js Formulário</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-<div id="app">
+<template>
   <div class="col-md-12 p-2">
     <div class="mb-3">
       <label class="form-label fw-bolder">Etapas dos projetos</label>
@@ -34,12 +23,13 @@
       </div>
     </div>
   </div>
-</div>
+</template>
 
 <script>
-  new Vue({
-    el: '#app',
-    data: {
+export default {
+  name: "NomeDoSeuComponente",
+  data() {
+    return {
       steps: [
         { label: 'Previsão', date: '' },
         { label: 'Em análise', date: '' },
@@ -47,14 +37,19 @@
         { label: 'Entrega', date: '' },
       ],
       currentIndex: 1, // O índice do campo "Em análise"
+    };
+  },
+  methods: {
+    changeStep(index) {
+      this.currentIndex = index;
     },
-    methods: {
-      changeStep(index) {
-        this.currentIndex = index;
-      },
-    },
-  });
+  },
+};
 </script>
 
-</body>
-</html>
+<style scoped>
+/* Estilos específicos para o seu componente, se necessário */
+.laranja {
+  background-color: orange;
+}
+</style>
