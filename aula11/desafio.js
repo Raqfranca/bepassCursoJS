@@ -9,10 +9,10 @@
     Qual loop você deve usar para que essa mensagem seja mostrada no console?
     */
     
-    var once = false
+    var once = false;
 
     do {
-        console.log('Entrou ao menos uma vez!')
+        console.log('Entrou ao menos uma vez!');
     }while(once === true)
         
     /*
@@ -23,8 +23,8 @@
     
     var person = {
         name: 'Titi Vidal',
-        age: '24 years',
-        weight: '82Kg',
+        age: 24,
+        weight: 82,
         birthday: '22/08/2000',
         
     }
@@ -39,14 +39,15 @@
     'The person has [COUNTER] properties'
     */
 
+    var counter  = 0 
+
     for (var prop in person){
         console.log ('The ' + prop + ' of person is ' + person[prop]);
-        //var counter = prop.length
-        //console.log('The person has ' + counter + ' properties')
+        counter++
+        
     }
-    var counter = prop.length
+    
     console.log('The person has ' + counter + ' properties')
-
 
     /*
     Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
@@ -55,12 +56,52 @@
     Após a função, mostrar a mensagem no console:
     'The person has more than 25 years old? [TRUE/FALSE]'
     */
+
+    // Minha forma
+
+    function moreThan(age){
+
+        var personAge = person.age
+        var verification 
+        
+        if (age >= personAge){
+            verification = true
+        } 
+        else {
+            verification = false
+        }
+
+       return "The person has more than " + age +  " years old? " + verification
+    }
     
+    console.log(moreThan(23)) 
+
+    // Forma simplificada 
+
+ /*    function moreThan(age){
+        return person.age > age;
+    }
+
+    console.log("The person has more than 25 years old? " + moreThan(30));
+ */
     /*
     Faça um loop de 0 a 20, que adicione cada número como um item de um
     array chamado `numbers`. Se o contador for maior que 10, saia do loop.
     Mostre no console os números no array.
     */
+
+    console.log("De 0 a 10:")
+
+    var numbers = []
+
+    for (var i = 0; i < 21; i++){
+        numbers.push(i)  
+        if(i >= 10){
+            break
+        }
+    }
+
+    console.log(numbers)
 
     /*
     Faça outro loop de 0 a 20, que adicione a um array chamado `numbers` (já
@@ -68,5 +109,16 @@
     esses. Se o número for ímpar, pular para o próximo número.
     Mostrar no console os números do array.
     */
+
+    console.log("Pares de 0 a 20")
+    
+    numbers = []
+
+    for (var i = 0; i < 21; i++){
+        if((i%2) == 0){
+            numbers.push(i)
+        }
+    }
+    console.log(numbers)
     
 })()
