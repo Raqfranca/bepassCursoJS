@@ -12,6 +12,14 @@
   - Inclui quebras de linha,"enter", como filhos.
   - A NodeList não é um array, mas pode ser acessada de forma semelhante.
 
+  firstChild:
+  - Retorna o primeiro nó filho de um elemento.
+  - Pode incluir nós de texto ou comentários, além de elementos.
+
+  lastChild:
+  - Retorna o último nó filho de um elemento.
+  - Também pode incluir nós de texto, comentários ou elementos.
+
   nextSibling: 
   - Retorna o irmão seguinte do elemento atual no DOM. 
 
@@ -43,7 +51,22 @@
 
   Dica: Para verificar se uma propriedade é suportada pelos navegadores, você pode utilizar o site https://caniuse.com/. 
   Isso é útil para garantir a compatibilidade do seu código em diferentes ambientes.
-  
+
+  children:
+  - Retorna uma coleção HTML de todos os filhos de um elemento.
+  - Apenas inclui elementos HTML, excluindo nós de texto ou comentários.
+
+  firstElementChild:
+  - Retorna o primeiro elemento filho de um elemento.
+  - Ignora nós de texto ou comentários, trazendo apenas elementos HTML. 
+
+  childElementCount: 
+  - Retorna o número de elementos filhos de um elemento.
+  - Equivalente a element.children.length.
+
+  hasAttribute: 
+  - Método que verifica se o elemento possui o atributo especificado.
+  - Retorna um valor booleano (true se tiver, false se não tiver).
 */
 
   var $main = document.querySelector('.main');
@@ -53,9 +76,17 @@
   console.log($main.lastChild)
   console.log($main.nextSibling)
   console.log($main.previousSibling)
+
   console.log($main.nodeType)
   console.log($main.firstChild.nodeType)
-
+  
+  console.log($main.children)
+  console.log("HTML")
+  console.log($main.firstElementChild)
+  console.log($main.childElementCount)
+  console.log($main.children.length)
+  console.log($main.hasAttribute('class'))
+  
   var $main2 = document.querySelector('.main-content') 
   console.log($main2.firstChild.nodeType)
   console.log($main2.firstChild.nodeValue)
@@ -64,4 +95,5 @@
   console.log($main2.firstChild.nextSibling.nodeName)
 
 }) ();
+
 
