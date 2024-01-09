@@ -67,6 +67,50 @@
   hasAttribute: 
   - Método que verifica se o elemento possui o atributo especificado.
   - Retorna um valor booleano (true se tiver, false se não tiver).
+
+  .appendChild(element):
+  - Adiciona um elemento como filho ao elemento selecionado.
+  - Se o elemento já existir em outro lugar, ele é movido para a nova posição.
+
+  .insertBefore(node, beforeWhom):
+  - Insere um nó antes de outro nó específico.
+  - Recebe dois parâmetros: o nó a ser inserido e o nó antes do qual será inserido.
+
+  .cloneNode(deep):
+  - Clona um nó existente no DOM.
+  - O parâmetro deep é um valor booleano que determina se também deve ser clonado o conteúdo interno do elemento. 
+
+  .hasChildNodes():
+  - Verifica se o elemento possui nós filhos.
+  - Retorna um valor booleano (true se tiver filhos, false se não tiver).
+
+  .removeChild(child):
+  - Remove um nó filho específico do elemento pai.
+  - Recebe como parâmetro o nó filho a ser removido.
+
+  .replaceChildren(newChild):
+  - Substitui todos os filhos de um elemento pelos fornecidos.
+
+  .createTextNode(text):
+  - Cria um novo nó de texto com o texto especificado.
+  - Usado para criar conteúdo de texto que pode ser adicionado a um elemento.
+
+  .createElement(tagName):
+  - Cria um novo elemento HTML com a tag especificada.
+  - Útil para criar elementos que podem ser adicionados à estrutura do DOM.
+  
+  className:
+  - No JavaScript, o atributo class do HTML é representado por className.
+  - className funciona como um getter e setter para a classe do elemento.
+  - Retorna e define a classe como uma string.
+
+  .setAttribute(name, value):
+  - Define ou adiciona um novo atributo a um elemento HTML.
+  - Pode ser usado para manipular qualquer atributo, incluindo Id e Class.
+
+  .getAttribute(name):
+  - Obtém o valor de um atributo específico de um elemento HTML.
+  - Útil para recuperar valores de atributos, incluindo Id e outros.
 */
 
   var $main = document.querySelector('.main');
@@ -79,20 +123,58 @@
 
   console.log($main.nodeType)
   console.log($main.firstChild.nodeType)
-  
+
   console.log($main.children)
   console.log("HTML")
   console.log($main.firstElementChild)
   console.log($main.childElementCount)
   console.log($main.children.length)
   console.log($main.hasAttribute('class'))
-  
-  var $main2 = document.querySelector('.main-content') 
-  console.log($main2.firstChild.nodeType)
-  console.log($main2.firstChild.nodeValue)
-  console.log($main2.firstChild.nodeName)
-  console.log($main2.firstChild.nextSibling.nodeValue)
-  console.log($main2.firstChild.nextSibling.nodeName)
+
+  $main.appendChild
+
+  var $mainContent = document.querySelector('.main-content') 
+  console.log($mainContent.firstChild.nodeType)
+  console.log($mainContent.firstChild.nodeValue)
+  console.log($mainContent.firstChild.nodeName)
+  console.log($mainContent.firstChild.nextSibling.nodeValue)
+  console.log($mainContent.firstChild.nextSibling.nodeName)
+
+  var $mainHeader = document.querySelector('.main-header')
+
+  //$mainContent.appendChild($mainHeader);
+
+  var $fistText = $mainContent.firstChild;
+  var $fisTitle = $mainHeader.firstChild;
+  $mainHeader.insertBefore($fistText, $fisTitle)
+
+  var $cloneMainHeader = $mainHeader.cloneNode(true);
+  $mainContent.appendChild($cloneMainHeader);
+  console.log(document.querySelectorAll('.main-header').length);
+
+  var $h1 = $mainHeader.firstElementChild;
+  console.log($h1.hasChildNodes());
+
+  $mainHeader.removeChild($h1)
+
+  var $mainFooter = document.querySelector('.main-footer');
+
+  //$main.replaceChildren($cloneMainHeader, $mainFooter);
+
+  var  newTextNode = document.createTextNode('Febre e muita dor:(')
+
+  $main.appendChild(newTextNode);
+
+  var $newP = document.createElement('p')
+  $newP.appendChild(newTextNode)
+
+  $main.appendChild($newP);
+
+  console.log($main.className)
+  console.log($main.getAttribute('class'))
+  console.log($main.setAttribute('data-js'))
+
+
 
 }) ();
 
