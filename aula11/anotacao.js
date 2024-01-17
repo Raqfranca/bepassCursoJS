@@ -72,10 +72,6 @@ var counter = 10;
  console.log("Fim exemplo while")
 
 /*
-FOR IN 
-
-Sua descrição está quase correta. Vou fazer algumas correções:
-
 FOR...IN:
 
 - É utilizado para percorrer as propriedades enumeráveis de um objeto.
