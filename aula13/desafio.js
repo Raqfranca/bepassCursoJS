@@ -12,8 +12,8 @@
 
     console.log( 'O array em formato de string é:' );
     
-    var arrString = JSON.stringify(arr)
-    console.log(arrString)
+    console.log([1,2,3,4,5,6].toString());
+    console.log(arr.toString());
 
     /*
     Crie 2 arrays `sul` e `sudeste`, que serão as regiões do Brasil.
@@ -97,7 +97,7 @@
     ficar no mesmo nível que os estados já existentes, não em um array separado.
     */
     
-    var brasil = brasil.concat(nordeste)
+    brasil = brasil.concat(nordeste)
 
     /*
     Mostre no console os estados em `newSudeste`.
@@ -158,7 +158,7 @@
     - "Ceará não foi incluído :("
     */
 
-    var haveCeara = brasil.every(function (item) {
+    var haveCeara = brasil.some(function (item) {
         return item = "Ceará"     
     });
 
