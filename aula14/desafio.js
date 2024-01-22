@@ -134,21 +134,58 @@
     */
     console.log( '\nExiste um { number: 2 } em numberObjects?' );
     
-    var haveNumber2 = numberObjects.indexOf(2)
+    
+    var desiredNumber = 2;
+    var foundNumber = false;
 
-    console.log(haveNumber2)
+   
+    for (var i = 0; i < numberObjects.length; i++) {
+        if (numberObjects[i].number.indexOf(desiredNumber) !== -1) {
+            foundNumber = true;
+            break;
+        }
+    }
+
+    if (foundNumber) {
+        console.log("Existe um objeto " + desiredNumber + " em numberObjects!");
+    } else {
+        console.log("Não existe um objeto " + desiredNumber + " em numberObjects :(");
+    }
+
 
     /*
     Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
     será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
     */
     console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
-    // ?
+    
+    var desiredNumber = 2;
+    var foundNumber = false;
+
+   
+    for (var i = 0; i < numberObjects.length; i++) {
+        if (numberObjects[i].number.lastIndexOf(desiredNumber) !== -1) {
+            foundNumber = true;
+            break;
+        }
+    }
+
+    if (foundNumber) {
+        console.log("Existe um objeto " + desiredNumber + " em numberObjects!");
+    } else {
+        console.log("Não existe um objeto " + desiredNumber + " em numberObjects :(");
+    }
+
 
     /*
     Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
     formato de String.
     */
     console.log( '\njustMod2Or3 é um array? Se for, a representação dele em String é:' );
-    // ?
+    
+    console.log(Array.isArray(justMod2Or3)); 
+
+    console.log(justMod2Or3.toString())
+
+
 })()
